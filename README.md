@@ -26,7 +26,9 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 2. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
 3. How would you explain the concept of a variable to someone new to programming?
 4. What is the purpose of using functions in code?
-5. What is JSON data?
+    Functions are important in code because it allows the developer to repeat sections of code with just a single line.
+5. What is JSON data? 
+    JSON stands for JavaScript Object Notation. It is a syntax (human-readable text) for storing and exchanging data that is written with JavaScript object notation. This allows browsers and servers to communicate with each other.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
