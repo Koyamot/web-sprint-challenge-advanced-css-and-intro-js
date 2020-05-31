@@ -1,32 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Koyamot 
-Koyamot
-/
-web-sprint-challenge-advanced-css-and-intro-js
-forked from LambdaSchool/web-sprint-challenge-advanced-css-and-intro-js
-0
-0
-32
- Code
- Pull requests 0 Actions
- Projects 0
- Wiki
- Security 0
- Insights
- Settings
-web-sprint-challenge-advanced-css-and-intro-js/css/index.css
-@BrityHemming BrityHemming removed unused grid styling and added css reset
-774120a 11 days ago
-@BrityHemming@zoelud
-136 lines (133 sloc)  2.66 KB
-  
 /*CSS RESET*/
 html, body, div, span, applet, object, iframe,  
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,  
