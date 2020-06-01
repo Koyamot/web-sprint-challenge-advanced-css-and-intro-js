@@ -231,12 +231,12 @@ function getArtistByIndex(id, name) {
   const sendName = artists[id];
   for (i=0; i<artists.length; i++) 
   {
-    if (artists[i].id == id) artistArray = i;
+    if (artists[i].id == id) artistsArray = i; 
   }
   return `The artist at index ${id} is ${sendName.name}.`;
   }
 
-// console.log(getArtistByIndex(8, "name"))
+console.log(getArtistByIndex(8, "name"))
   
   /**
 
@@ -319,12 +319,12 @@ and returns an array with names of artists who painted more than 100 paintings.
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
 function lotsOfArt(manyPaintings){
- let theMost = [];
- for (let i = 0; i<artists.length; i++)
+ let theMost = []; //create an array
+ for (let i = 0; i<artists.length; i++) //for loop
  {
-   if (artists[i].paintings > 100)
+   if (artists[i].paintings > 100) //if their paitnings are greater than 100.
    {
-     theMost.push(artists[i].name)
+     theMost.push(artists[i].name) //push those artists name into theMost array
    }
  }
 
@@ -332,7 +332,7 @@ function lotsOfArt(manyPaintings){
 
 }
 
-console.log(lotsOfArt(artists))
+// console.log(lotsOfArt(artists))
 
 
 
@@ -359,16 +359,30 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
-
-    /* Code here */
-
+function getHTML(data){
+  let codeChunk = "";
+  for (i in data){
+      
+      console.log (`
+      <div id="artist">
+      <div class="image">
+          <img src="assets/${data[i].name.replace(" ","-")}.jpg"/> 
+      </div>
+      <div class = "name">
+        <a href=${data[i].wikipedia}> ${data[i].name}</a>
+      </div>
+      <div class = "bio">${data[i].bio}</div>
+      </div>
+    `)
+  }
+   return codeChunk; 
   }
 
+ console.log(getHTML(artists));
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
+function randomize(data){
 
     /* Code here */
 
