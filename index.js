@@ -245,7 +245,8 @@ function getArtistByIndex(id, name) {
 
 function get20s(data){
   let twentiesArtists = []; //let twentiesArtists = an array.
-  for (let i = 0; i<data.length; i++){ // for loop
+  for (let i = 0; i<artists.length; i++) // for loop
+    { 
     let years = parseInt(artists[i].years); //parse years in artists
     if(years > 1900 && years < 2000) //find the years
     {
@@ -256,7 +257,7 @@ function get20s(data){
 
 }
 
- console.log(get20s(artists));
+// console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -269,11 +270,14 @@ function get20s(data){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(name, id) {
-    /* code here */
+function removeArtist(name, index) {
+  artists.splice(index, 1);
+  console.log(artists.length);
   }
   
+ // removeArtist("name", 8)
   /**
+   
 
 
 
@@ -290,11 +294,21 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+function addArtist(newInfo){
+  let me = {
+    id: 20,
+    name: "Kyla Oyamot", 
+    years: "1985 - 2020",
+    genre: "UX & Web Development", 
+    nationality: "American",
+    bio: "Born and raised in Hawaii, her unique background has allowed her a different perspective, and to think outside the box."
+      }
+      artists.push(me);
+      return artists;
   }
+
+  // addArtist(artists);
+  // console.log(artists[artists.length - 1])
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -304,11 +318,21 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(manyPaintings){
+ let theMost = [];
+ for (let i = 0; i<artists.length; i++)
+ {
+   if (artists[i].paintings > 100)
+   {
+     theMost.push(artists[i].name)
+   }
+ }
 
-  /* Code here */
+ return theMost;
 
 }
+
+console.log(lotsOfArt(artists))
 
 
 
