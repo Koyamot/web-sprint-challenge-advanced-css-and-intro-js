@@ -208,9 +208,13 @@ const artists = [
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
-
+// console.log(artists[0].name)
+// console.log(artists[2].bio)
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+
+artists[8].name = "Vincent Van Gogh"
+// console.log(artists[8].name);
 
 
 
@@ -222,20 +226,38 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
+
 function getArtistByIndex(id, name) {
-    /* code here */
+  const sendName = artists[id];
+  for (i=0; i<artists.length; i++) 
+  {
+    if (artists[i].id == id) artistsArray = i; 
   }
+  return `The artist at index ${id} is ${sendName.name}.`;
+  }
+
+console.log(getArtistByIndex(8, "name"))
   
   /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
-
-  /* Code here */
+function get20s(data){
+  let twentiesArtists = []; //let twentiesArtists = an array.
+  for (let i = 0; i<artists.length; i++) // for loop
+    { 
+    let years = parseInt(artists[i].years); //parse years in artists
+    if(years > 1900 && years < 2000) //find the years
+    {
+      twentiesArtists.push(artists[i].name); //pushes the name of artists into the array
+    }
+  }
+    return twentiesArtists;
 
 }
+
+// console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -248,11 +270,14 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(name, index) {
+  artists.splice(index, 1);
+  console.log(artists.length);
   }
   
+ // removeArtist("name", 8)
   /**
+   
 
 
 
@@ -269,11 +294,21 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+function addArtist(newInfo){
+  let me = {
+    id: 20,
+    name: "Kyla Oyamot", 
+    years: "1985 - 2020",
+    genre: "UX & Web Development", 
+    nationality: "American",
+    bio: "Born and raised in Hawaii, her unique background has allowed her a different perspective, and to think outside the box."
+      }
+      artists.push(me);
+      return artists;
   }
+
+  // addArtist(artists);
+  // console.log(artists[artists.length - 1])
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -283,11 +318,21 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(manyPaintings){
+ let theMost = []; //create an array
+ for (let i = 0; i<artists.length; i++) //for loop
+ {
+   if (artists[i].paintings > 100) //if their paitnings are greater than 100.
+   {
+     theMost.push(artists[i].name) //push those artists name into theMost array
+   }
+ }
 
-  /* Code here */
+ return theMost;
 
 }
+
+// console.log(lotsOfArt(artists))
 
 
 
@@ -314,16 +359,30 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
-
-    /* Code here */
-
+function getHTML(data){
+  let codeChunk = "";
+  for (i in data){
+      
+      console.log (`
+      <div id="artist">
+      <div class="image">
+          <img src="assets/${data[i].name.replace(" ","-")}.jpg"/> 
+      </div>
+      <div class = "name">
+        <a href=${data[i].wikipedia}> ${data[i].name}</a>
+      </div>
+      <div class = "bio">${data[i].bio}</div>
+      </div>
+    `)
+  }
+   return codeChunk; 
   }
 
+ console.log(getHTML(artists));
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
+function randomize(data){
 
     /* Code here */
 
